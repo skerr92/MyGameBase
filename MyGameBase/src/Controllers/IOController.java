@@ -1,7 +1,15 @@
+/** @Author seth kerr
+ *  CopyRight 2018
+ *  Oak Development Technologies
+ *
+ *  MIT License. See license on MyGameBase repository on GitHub
+ *
+ */
+
 package Controllers;
 
 import SpriteModels.CharacterCollection;
-import SpriteModels.MyCharacter;
+import SpriteModels.MyMovableCharacter;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -17,7 +25,7 @@ public class IOController {
      * and feel free to build off the sample code provided in the comments
      */
     //User an arraylist to store your characters
-    private ArrayList<MyCharacter> myCharacters = new ArrayList<>();
+    private ArrayList<MyMovableCharacter> myCharacters = new ArrayList<>();
     //or build a character collection based on the CharacterCollection base.
     private CharacterCollection characterCollection = new CharacterCollection();
     private String filename;
@@ -36,7 +44,7 @@ public class IOController {
                  * to create longer character, level, or object configuration files.
                  * It also helps build individual objects and process more detail.
                  *
-                 * be sure to use the 'add(MyCharacter)' method to add your read in character
+                 * be sure to use the 'add(MyMovableCharacter)' method to add your read in character
                  * to the character collection / arraylist.
                  */
 

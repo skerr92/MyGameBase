@@ -6,7 +6,7 @@
  *
  *  Use this interface when building any sprite type character.
  *
- *  This is not a character view. See CharacterViews interface for creating
+ *  This is not a character view. See MovableCharacter interface for creating
  *  the view models for your sprites.
  *
  *  Example: public Class HeroSprite  implements CharacterBase

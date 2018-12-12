@@ -13,30 +13,59 @@
 
 package SpriteModels;
 
-import Interfaces.CharacterViews;
-import javafx.scene.image.ImageView;
+import Interfaces.MovableCharacter;
 
-abstract public class IsMovable extends javafx.scene.image.ImageView {
+public abstract class IsMovable extends javafx.scene.image.ImageView implements MovableCharacter {
 
-    //Override me!
+    private double direction;
+    private double speed;
+    private static final double MAX_SPEED = 10;
+
+    public IsMovable(double speed, double direction, double startingX, double startingY) {
+        this.direction = direction;
+        this.speed = speed;
+        super.setX(startingX);
+        super.setY(startingY);
+    }
+
+    @Override
     public double getCenterX() {
-        return 0.0;
+        return super.getX() + 0.5 * super.getFitWidth();
     }
 
-    //Override me!
+    @Override
     public double getCenterY() {
-        return 0.0;
+        return super.getY() + 0.5 * super.getFitHeight();
     }
 
-    //Override me!
+    @Override
     public double getBoundingRadius() {
-        return 0.0;
+        return 0.5 * (super.getFitWidth() + super.getFitHeight())/2;
     }
 
+    //Speed getters and setters
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
 
-    //Fill this out later
+    public double getSpeed() {
+        return speed;
+    }
+
+    //Direction getters and setters
+    public void setDirection(double direction) {
+        this.direction = direction;
+    }
+
+    public double getDirection() {
+        return direction;
+    }
+    @Override
     public void move() {
-
+        Double x_velocity = this.getSpeed() * Math.cos(this.getDirection() * Math.PI / 180.0);
+        Double y_velocity = this.getSpeed() * Math.sin(this.getDirection() * Math.PI / 180.0);
+        this.setX(this.getX() + x_velocity);
+        this.setY(this.getY() + y_velocity);
     }
 
 }
