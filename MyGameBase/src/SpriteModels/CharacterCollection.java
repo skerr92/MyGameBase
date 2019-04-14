@@ -34,6 +34,16 @@ public class CharacterCollection {
         return myMovableCharacters.size();
     }
 
+    public int getNumHeros() {
+        int numHeros = 0;
+        for (int i = 0; i < numMovableCharacters(); i++) {
+            if (myMovableCharacters.get(i).getIsHero()) {
+                numHeros += 1;
+            }
+        }
+        return numHeros;
+    }
+
     public String toString() {
         String output = "Character List";
 
